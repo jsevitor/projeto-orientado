@@ -1,0 +1,29 @@
+@use '../../styles/variables'
+
+.header_bar
+    height: 5rem
+    width: 100%
+    padding: 0 2rem
+    display: flex
+    align-items: center
+    background-image: variables.$main-gradient
+    position: fixed
+    z-index: 1
+
+    h1
+        color: variables.$white
+
+    i
+        display: none
+
+@media screen and (max-width: 768px)
+    html
+        font-size: 50%
+
+    .header_bar
+        justify-content: center
+
+        i
+            display: flex
+            font-size: 25px
+            color: variables.$white
