@@ -1,16 +1,16 @@
 // IMPORTAÇÃO DE COMPONENTS
 import Header from "./components/Header/Header";
-import MainContent from "./pages/MainContent/MainContent";
+import SideBar from "./components/SideBar/SideBar";
+import { Global } from "./styles/Global";
 
-// IMPORTAÇÃO DE ESTILOS
-import "./styles/Global.sass";
 
 function App() {
   return (
     <>
+      <Global />
       <Header />
+      <SideBar />
 
-      <MainContent />
     </>
   );
 }

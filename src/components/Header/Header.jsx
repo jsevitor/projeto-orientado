@@ -1,11 +1,12 @@
-import "./Header.sass";
+import { BsList } from "react-icons/bs";
 
+import { Container, MenuButton, Title } from "./Styles";
 const Header = () => {
   return (
-    <div className="header_bar">
-      <h1>FRIOS MORETTI</h1>
-      <i className="bx bx-menu"></i>
-    </div>
+    <Container>
+      <Title>Projeto Orientado</Title>
+      <MenuButton as={BsList} />
+    </Container>
   );
 };
 
