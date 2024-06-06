@@ -1,0 +1,149 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+.nav_container {
+  background-color: #D9D9D9;
+  width: 300px;
+  height: calc(100vh - 80px);
+  padding: 1rem 0.2rem;
+  box-shadow: 1px 0px 5px 0px rgba(0, 0, 0, 0.3);
+  position: fixed;
+  top: 80px;
+  left: 0;
+  transition: width 0.3s ease;
+  display: grid;
+  grid-template-rows: 7% 86% 7%;
+}
+
+#hideMenu {
+  display: flex;
+  justify-content: right;
+  font-size: 20px;
+  padding: 0.5rem 1rem 1rem 1rem;
+  border-bottom: 1px solid #75A780;
+}
+#hideMenu:hover i {
+  cursor: pointer;
+  color: #51835C;
+}
+
+.menu_list {
+  padding: 1rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.menu_list li {
+  font-size: 11px;
+}
+.menu_list a {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.3rem 0;
+  border: 1px solid transparent;
+}
+.menu_list a:hover {
+  background-color: rgba(201, 198, 198, 0.3294117647);
+  border-radius: 0.4rem;
+}
+.menu_list a i {
+  font-size: 25px;
+  color: inherit;
+}
+.menu_list a h2, .menu_list a h3 {
+  margin: 0;
+  text-shadow: none;
+}
+.menu_list a:hover i {
+  color: #51835C;
+}
+.menu_list a:hover h2 {
+  color: #51835C;
+}
+.menu_list a.active {
+  border-left: 5px solid #51835C;
+}
+.menu_list a.active h2, .menu_list a.active i {
+  color: #51835C;
+}
+
+.nav_link {
+  display: flex;
+  justify-content: left;
+  padding: 0 0.5rem;
+  border: 2px solid transparent;
+}
+.nav_link:hover {
+  outline: none;
+  border-left: 5px solid #51835C;
+  outline-offset: -2px;
+}
+
+.subMenu {
+  display: none;
+  transition: opacity 1s ease 0s;
+}
+.subMenu li {
+  margin-left: 2rem;
+  margin-top: 0.5rem;
+}
+.subMenu a:hover h3 {
+  color: #51835C;
+}
+
+.collapsedSubMenu {
+  display: block;
+}
+
+.collapsed {
+  width: 65px;
+}
+.collapsed #hideMenu, .collapsed .nav_link, .collapsed .profile_container {
+  justify-content: center;
+}
+
+.menu_option.active {
+  border-left: 5px solid #51835C;
+}
+.menu_option.active h2, .menu_option.active i {
+  color: #51835C;
+}
+
+.nav_link.active {
+  border-left: 5px solid #51835C;
+}
+.nav_link.active h2, .nav_link.active i {
+  color: #51835C;
+}
+
+.profile_container {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 0.5rem 0.5rem 0.5rem;
+  font-size: 30px;
+  border-top: 1px solid #75A780;
+}
+.profile_container span {
+  display: flex;
+  align-items: center;
+}
+.profile_container span h4 {
+  padding: 0 0.5rem;
+  font-size: 16px;
+  text-shadow: none;
+}
+.profile_container .exit {
+  font-size: 18px;
+}
+.profile_container .exit:hover {
+  cursor: pointer;
+  color: #51835C;
+}
+
+@media screen and (max-width: 768px) {
+  .nav_container {
+    display: none;
+  }
+  .nav_link {
+    justify-content: center;
+  }
+}/*# sourceMappingURL=SideBarMenu.css.map */
