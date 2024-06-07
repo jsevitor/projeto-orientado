@@ -14,9 +14,15 @@ export const Container = styled.div`
   left: 50%;
   transform: translateX(-50%);
   animation: showSidebar 0.4s;
+  box-shadow: 0px 5px 8px 2px rgba(184, 184, 184, 1);
 
   hr {
     display: none;
+  }
+
+  &.collapsed {
+    max-width: 60px;
+    padding: 0.5rem;
   }
 
   @media (min-width: 768px) {
@@ -30,7 +36,7 @@ export const Container = styled.div`
     transform: translateX(0);
     border-radius: 0;
     height: ${measures.heightSize};
-    max-width: 280px;
+    max-width: 300px;
 
     hr {
       display: block;
@@ -38,13 +44,22 @@ export const Container = styled.div`
   }
 `;
 
-export const TopBox = styled.div`
+export const HideMenu = styled.div`
   display: none;
+
+  &:hover {
+    cursor: pointer;
+  }
 
   @media (min-width: 1024px) {
     display: block;
     display: flex;
     justify-content: end;
+    padding-top: 0.5rem;
+
+    &.collapsed {
+      justify-content: center;
+    }
   }
 `;
 
@@ -55,19 +70,21 @@ export const NavContainer = styled.nav`
 export const MenuItems = styled.ul`
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  /* gap: 1rem; */
 `;
 
 export const MenuItem = styled.li`
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.5rem;
-
-  &:hover {
-    background-color: ${colors.veryLightGray};
+  a {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
     padding: 0.5rem;
-    border-radius: 0.5rem;
+
+    &:hover {
+      background-color: ${colors.veryLightGray};
+      padding: 0.5rem;
+      border-radius: 0.5rem;
+    }
   }
 `;
 
@@ -76,11 +93,25 @@ export const Icon = styled.i`
 `;
 
 export const ItemTitle = styled.h3`
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 500;
 `;
 
-export const BottomBox = styled.div`
+export const SubMenu = styled.ul`
+  margin-left: 2.2rem;
+  display: ${(props) => (props.isOpen ? "block" : "none")};
+`;
+
+export const SubMenuItem = styled.li`
+  /* margin-left: 0.1rem; */
+  padding: 0.2rem 0;
+
+  h3 {
+    font-size: 14px;
+  }
+`;
+
+export const ProfileContainer = styled.div`
   display: none;
 
   @media (min-width: 1024px) {
