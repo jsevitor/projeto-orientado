@@ -1,4 +1,4 @@
-import {createGlobalStyle} from "styled-components";
+import { createGlobalStyle } from "styled-components";
 import { colors, fonts } from "./Variables";
 
 export const Global = createGlobalStyle`
@@ -26,6 +26,7 @@ export const Global = createGlobalStyle`
         box-sizing: border-box;
         font-family: ${fonts.bodyFont};
         color: ${colors.dark};
+        font-size: 16px;
     }
 
     body {

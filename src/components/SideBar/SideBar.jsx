@@ -25,16 +25,12 @@ import {
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 
-const SideBar = ({ active }) => {
+const SideBar = ({ active, menuCollapsed, setMenuCollapsed }) => {
   const [subMenus, setSubMenus] = useState({
     produtos: localStorage.getItem("isOpenProdutosSubMenu") === "true",
     cadastros: localStorage.getItem("isOpenCadastrosSubMenu") === "true",
     movimentacoes:
       localStorage.getItem("isOpenMovimentacoesSubMenu") === "true",
-  });
-
-  const [menuCollapsed, setMenuCollapsed] = useState(() => {
-    return localStorage.getItem("menuCollapsed") === "true";
   });
 
   useEffect(() => {
@@ -81,7 +77,7 @@ const SideBar = ({ active }) => {
       </HideMenu>
       <hr />
       <NavContainer>
-        <MenuItems>
+        <MenuItems className={menuCollapsed ? "collapsed" : ""}>
           <MenuItem>
             <Link to={"/"}>
               <Icon as={BsHouse} />
@@ -177,7 +173,7 @@ const SideBar = ({ active }) => {
         </MenuItems>
       </NavContainer>
       <hr />
-      <ProfileContainer>
+      <ProfileContainer className={menuCollapsed ? "collapsed" : ""}>
         <Icon as={BsPersonCircle} />
         {!menuCollapsed && <ItemTitle>Fulano de Tal</ItemTitle>}
       </ProfileContainer>

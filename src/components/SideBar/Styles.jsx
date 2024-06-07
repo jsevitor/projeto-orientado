@@ -15,14 +15,10 @@ export const Container = styled.div`
   transform: translateX(-50%);
   animation: showSidebar 0.4s;
   box-shadow: 0px 5px 8px 2px rgba(184, 184, 184, 1);
+  z-index: 999;
 
   hr {
     display: none;
-  }
-
-  &.collapsed {
-    max-width: 60px;
-    padding: 0.5rem;
   }
 
   @media (min-width: 768px) {
@@ -40,6 +36,11 @@ export const Container = styled.div`
 
     hr {
       display: block;
+    }
+
+    &.collapsed {
+      max-width: 80px;
+      padding: 0.5rem;
     }
   }
 `;
@@ -71,6 +72,13 @@ export const MenuItems = styled.ul`
   display: flex;
   flex-direction: column;
   /* gap: 1rem; */
+
+  @media (min-width: 1024px) {
+    &.collapsed {
+      align-items: center;
+      text-align: center;
+    }
+  }
 `;
 
 export const MenuItem = styled.li`
@@ -118,5 +126,9 @@ export const ProfileContainer = styled.div`
     padding: 0 0.5rem;
     display: flex;
     gap: 1rem;
+
+    &.collapsed {
+      justify-content: center;
+    }
   }
 `;

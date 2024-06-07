@@ -1,11 +1,11 @@
 import CadastroFornecedor from "../CadastroFornecedor/CadastroFornecedor";
-import "./MainContent.sass";
+import { Container } from "./Styles";
 
-const MainContent = () => {
+const MainContent = ({ menuCollapsed }) => {
   return (
-    <main>
+    <Container collapsed={menuCollapsed}>
       <CadastroFornecedor />
-    </main>
+    </Container>
   );
 };
 
