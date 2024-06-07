@@ -1,10 +1,10 @@
-import CadastroFornecedor from "../CadastroFornecedor/CadastroFornecedor";
+import Routes from "../../Routes";
 import { Container } from "./Styles";
 
 const MainContent = ({ menuCollapsed }) => {
   return (
     <Container collapsed={menuCollapsed}>
-      <CadastroFornecedor />
+      <Routes />
     </Container>
   );
 };
