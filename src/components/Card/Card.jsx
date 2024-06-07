@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import "./Card.sass";
 
 const Card = ({ label, children }) => {
@@ -9,6 +10,19 @@ const Card = ({ label, children }) => {
       </div>
       <form className="card_body">{children}</form>
     </div>
+=======
+import { CardBody, CardHeader, Container, Icon, Title } from "./Styles";
+
+const Card = ({ title, icon, children }) => {
+  return (
+    <Container>
+      <CardHeader>
+        <Title>{title}</Title>
+        <Icon as={icon} />
+      </CardHeader>
+      <CardBody>{children}</CardBody>
+    </Container>
+>>>>>>> master
   );
 };
 

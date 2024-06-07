@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 import {createGlobalStyle} from "styled-components";
+=======
+import { createGlobalStyle } from "styled-components";
+>>>>>>> master
 import { colors, fonts } from "./Variables";
 
 export const Global = createGlobalStyle`
@@ -26,6 +30,10 @@ export const Global = createGlobalStyle`
         box-sizing: border-box;
         font-family: ${fonts.bodyFont};
         color: ${colors.dark};
+<<<<<<< HEAD
+=======
+        font-size: 16px;
+>>>>>>> master
     }
 
     body {
@@ -50,4 +58,8 @@ export const Global = createGlobalStyle`
         padding: 0;
         list-style: none;
     }
+<<<<<<< HEAD
 `;
+=======
+`;
+>>>>>>> master
