@@ -31,12 +31,7 @@ export const CardHeader = styled.div`
   }
 
   @media (min-width: 1024px) {
-    padding: 1rem 2rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-image: ${colors.gradient};
-    border-radius: 0.5rem 0.5rem 0 0;
+    padding: 0.5rem 2rem;
   }
 `;
 

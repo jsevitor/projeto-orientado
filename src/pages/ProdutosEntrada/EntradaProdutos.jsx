@@ -3,19 +3,12 @@ import Card from "../../components/Card/Card";
 import { InputField, SelectField } from "../../components/Form/Form";
 import { ButtonContainer, FormContainer } from "./Styles";
 
-const CadastroProduto = () => {
+const EntradaProdutos = () => {
   return (
-    <Card title={"Cadastro de Produto"} icon={"bi bi-box-seam"}>
+    <Card title={"Entrada de Produto"} icon={"bi bi-download"}>
       <FormContainer>
-        <InputField label={"Nome"} />
-        <InputField label={"Marca"} />
-        <SelectField label="Categoria" value="">
-          <option value="" disabled selected>
-            Selecione
-          </option>
-          <option value="opcao1">Opção 1</option>
-          <option value="opcao2">Opção 2</option>
-        </SelectField>
+        <InputField label={"Produto"} name={"product"} />
+        <InputField label={"Quantidade"} name={"quantity"} />
         <SelectField label="Fornecedor" value="">
           <option value="" disabled selected>
             Selecione
@@ -23,7 +16,17 @@ const CadastroProduto = () => {
           <option value="opcao1">Opção 1</option>
           <option value="opcao2">Opção 2</option>
         </SelectField>
-        <InputField label={"Foto"} type={"file"} />
+        <InputField
+          label={"Data de Entrada"}
+          name={"entry-date"}
+          type={"date"}
+        />
+        <InputField
+          label={"Número de Lote"}
+          name={"lot-number"}
+          type={"number"}
+        />
+        <InputField label={"Preço de Compra"} name={"purchase-price"} />
       </FormContainer>
       <ButtonContainer>
         <Button label={"Adicionar"} />
@@ -33,4 +36,4 @@ const CadastroProduto = () => {
   );
 };
 
-export default CadastroProduto;
+export default EntradaProdutos;

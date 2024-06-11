@@ -86,7 +86,7 @@ const SideBar = ({ active, menuCollapsed, setMenuCollapsed }) => {
           </MenuItem>
 
           <MenuItem>
-            <Link to={"/cadastros"} onClick={() => toggleSubMenu("cadastros")}>
+            <Link to={"#"} onClick={() => toggleSubMenu("cadastros")}>
               <Icon as={BsReverseLayoutTextWindowReverse} />
               {!menuCollapsed && <ItemTitle>Cadastros</ItemTitle>}
               {!menuCollapsed &&
@@ -112,7 +112,7 @@ const SideBar = ({ active, menuCollapsed, setMenuCollapsed }) => {
           </MenuItem>
 
           <MenuItem>
-            <Link to={"/produtos"} onClick={() => toggleSubMenu("produtos")}>
+            <Link to={"#"} onClick={() => toggleSubMenu("produtos")}>
               <Icon as={BsBoxSeam} />
               {!menuCollapsed && <ItemTitle>Produtos</ItemTitle>}
               {!menuCollapsed &&
@@ -136,10 +136,7 @@ const SideBar = ({ active, menuCollapsed, setMenuCollapsed }) => {
           </MenuItem>
 
           <MenuItem>
-            <Link
-              to={"/movimentacoes"}
-              onClick={() => toggleSubMenu("movimentacoes")}
-            >
+            <Link to={"#"} onClick={() => toggleSubMenu("movimentacoes")}>
               <Icon as={BsArrowLeftRight} />
               {!menuCollapsed && <ItemTitle>Movimentações</ItemTitle>}
               {!menuCollapsed &&

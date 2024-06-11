@@ -29,3 +29,5 @@ export const Select = styled.select`
     padding: 0.3rem 0.5rem;
   }
 `;
+
+export const Option = styled.option``;

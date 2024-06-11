@@ -5,7 +5,7 @@ const Card = ({ title, icon, children }) => {
     <Container>
       <CardHeader>
         <Title>{title}</Title>
-        <Icon as={icon} />
+        <Icon className={icon} />
       </CardHeader>
       <CardBody>{children}</CardBody>
     </Container>

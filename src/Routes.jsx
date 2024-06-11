@@ -2,9 +2,9 @@ import { Routes, Route } from "react-router-dom";
 import CadastroFornecedor from "./pages/CadastroFornecedor/CadastroFornecedor";
 import CadastroProduto from "./pages/CadastroProduto/CadastroProduto";
 import CadastroUsuario from "./pages/CadastroUsuario/CadastroUsuario";
+import EntradaProduto from "./pages/ProdutosEntrada/EntradaProdutos";
+import RetiradaProdutos from "./pages/ProdutosRetirada/RetiradaProdutos";
 
-// import EntradaProduto from './pages/EntradaProduto/EntradaProduto';
-// import RetiradaProduto from './pages/RetiradaProduto/RetiradaProduto';
 // import Movimentacoes from './pages/Movimentacoes/Movimentacoes';
 // import PainelControle from './pages/PainelControle/PainelControle';
 // import ProdutosCadastrados from './pages/ProdutosCadastrados/ProdutosCadastrados';
@@ -19,9 +19,9 @@ export default () => {
       <Route path="/cadastro-fornecedor" element={<CadastroFornecedor />} />
       <Route path="/cadastro-produto" element={<CadastroProduto />} />
       <Route path="/cadastro-usuario" element={<CadastroUsuario />} />
-      {/* <Route path='/entrada' element={<EntradaProduto />} />
-          <Route path='/retirada' element={<RetiradaProduto />} />
-          <Route path='/produtos-cadastrados' element={<ProdutosCadastrados />} />
+      <Route path="/entrada-produtos" element={<EntradaProduto />} />
+      <Route path="/retirada-produtos" element={<RetiradaProdutos />} />
+      {/*    <Route path='/produtos-cadastrados' element={<ProdutosCadastrados />} />
           <Route path='/movimentacoes' element={<Movimentacoes />} />
           <Route path='/entradas-cadastradas' element={<EntradasCadastradas />}/>
           <Route path='/retiradas-cadastradas' element={<RetiradasCadastradas />}/>
