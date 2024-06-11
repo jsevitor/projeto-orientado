@@ -1,6 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 import CadastroFornecedor from "./pages/CadastroFornecedor/CadastroFornecedor";
 import CadastroProduto from "./pages/CadastroProduto/CadastroProduto";
+import CadastroUsuario from "./pages/CadastroUsuario/CadastroUsuario";
 
 // import EntradaProduto from './pages/EntradaProduto/EntradaProduto';
 // import RetiradaProduto from './pages/RetiradaProduto/RetiradaProduto';
@@ -17,7 +18,7 @@ export default () => {
       <Route index element={<CadastroFornecedor />} />
       <Route path="/cadastro-fornecedor" element={<CadastroFornecedor />} />
       <Route path="/cadastro-produto" element={<CadastroProduto />} />
-      {/* <Route path="/cadastro-usuario" element={<CadastroUsuario />} /> */}
+      <Route path="/cadastro-usuario" element={<CadastroUsuario />} />
       {/* <Route path='/entrada' element={<EntradaProduto />} />
           <Route path='/retirada' element={<RetiradaProduto />} />
           <Route path='/produtos-cadastrados' element={<ProdutosCadastrados />} />
