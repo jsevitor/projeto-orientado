@@ -4,7 +4,7 @@ import CadastroProduto from "./pages/CadastroProduto/CadastroProduto";
 import CadastroUsuario from "./pages/CadastroUsuario/CadastroUsuario";
 import EntradaProduto from "./pages/ProdutosEntrada/EntradaProdutos";
 import RetiradaProdutos from "./pages/ProdutosRetirada/RetiradaProdutos";
-// import ProdutosCadastrados from "./pages/ProdutosCadastrados/ProdutosCadastrados";
+import ProdutosCadastrados from "./pages/ProdutosCadastrados/ProdutosCadastrados";
 
 // import Movimentacoes from './pages/Movimentacoes/Movimentacoes';
 // import PainelControle from './pages/PainelControle/PainelControle';
@@ -22,7 +22,7 @@ export default () => {
       <Route path="/cadastro-usuario" element={<CadastroUsuario />} />
       <Route path="/entrada-produtos" element={<EntradaProduto />} />
       <Route path="/retirada-produtos" element={<RetiradaProdutos />} />
-      {/* <Route path="/produtos-cadastrados" element={<ProdutosCadastrados />} /> */}
+      <Route path="/produtos-cadastrados" element={<ProdutosCadastrados />} />
       {/*    <Route path='/movimentacoes' element={<Movimentacoes />} />
           <Route path='/entradas-cadastradas' element={<EntradasCadastradas />}/>
           <Route path='/retiradas-cadastradas' element={<RetiradasCadastradas />}/>

@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { Btn } from "./Styles";
 
-export default function Button({ label, to }) {
+export default function Button({ label, to, onClick }) {
   if (to) {
     return (
       <Btn>
@@ -12,5 +12,9 @@ export default function Button({ label, to }) {
     );
   }
 
-  return <Btn className="btn">{label}</Btn>;
+  return (
+    <Btn className="btn" onClick={onClick}>
+      {label}
+    </Btn>
+  );
 }

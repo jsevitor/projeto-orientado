@@ -1,4 +1,3 @@
-import { BsList, BsXLg } from "react-icons/bs";
 import { Container, MenuButton, Title } from "./Styles";
 import { useState } from "react";
 import SideBar from "../SideBar/SideBar";
@@ -11,11 +10,11 @@ const Header = () => {
 
   return (
     <Container>
-      <Title>Projeto Orientado</Title>
+      <Title>Controle de Estoque</Title>
       {!sidebar ? (
-        <MenuButton as={BsList} onClick={toggleSidebar} />
+        <MenuButton className={"bi bi-list"} onClick={toggleSidebar} />
       ) : (
-        <MenuButton as={BsXLg} onClick={closeSidebar} />
+        <MenuButton className={"bi bi-x-lg"} onClick={closeSidebar} />
       )}
       {sidebar && <SideBar active={setSidebar} closeSidebar={closeSidebar} />}{" "}
       {/* Passa a função closeSidebar */}

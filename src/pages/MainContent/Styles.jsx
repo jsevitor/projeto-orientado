@@ -7,13 +7,14 @@ export const Container = styled.main`
   width: 100%;
   display: flex;
   justify-content: center;
-  z-index: 1;
-  position: fixed;
-  top: 80px;
-  left: 0;
+  overflow-x: hidden;
   transition: left 0.6s ease;
 
   @media (min-width: 1024px) {
+    z-index: 1;
+    position: fixed;
+    top: 80px;
+    left: 0;
     padding: 2rem;
     height: ${measures.heightSize};
     max-width: calc(100% - 80px);
