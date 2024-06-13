@@ -1,143 +1,99 @@
-import { useState } from "react";
-import Button from "../../components/Button/Button";
-import Card from "../../components/Card/Card";
-import { InputField, SelectField } from "../../components/Form/Form";
+import { useContext } from "react";
 import { ButtonContainer, FormContainer } from "./Styles";
-import { ToastContainer, toast } from "react-toastify";
+import { ToastContainer } from "react-toastify";
+import { FormContext } from "../../contexts/FormContext";
+
+import Card from "../../components/Card/Card";
+import Button from "../../components/Button/Button";
+import { InputField, SelectField } from "../../components/Form/Form";
 
 import "react-toastify/dist/ReactToastify.min.css";
 
 const CadastroFornecedor = () => {
-  const [data, setData] = useState({
-    name: "",
-    cnpj: "",
-    phone: "",
-    mobile: "",
-    email: "",
-    website: "",
-    zipCode: "",
-    adress: "",
-    adressNumber: "",
-    neighborhood: "",
-    city: "",
-    bank: "",
-    account: "",
-    bankingAgency: "",
-    pix: "",
-  });
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setData((prevData) => ({
-      ...prevData,
-      [name]: value,
-    }));
-  };
-
-  const handleSubmit = () => {
-    toast.success("Salvo com sucesso!");
-  };
-
-  const handleCancel = () => {
-    setData({
-      name: "",
-      cnpj: "",
-      phone: "",
-      mobile: "",
-      email: "",
-      website: "",
-      zipCode: "",
-      adress: "",
-      adressNumber: "",
-      neighborhood: "",
-      city: "",
-      bank: "",
-      account: "",
-      bankingAgency: "",
-      pix: "",
-    });
-  };
+  const { fornecedorData, handleChange, handleSubmit, handleCancel } =
+    useContext(FormContext);
 
   return (
     <Card title={"Cadastro de Fornecedor"} icon={"bi bi-truck"}>
       <ToastContainer />
       <FormContainer>
+        {fornecedorData.name}
         <InputField
           label={"Nome"}
           name={"name"}
-          value={data.name}
-          onChange={handleChange}
+          value={fornecedorData.name}
+          onChange={(e) => handleChange(e, "fornecedor")}
         />
         <InputField
           label={"CNPJ"}
           name={"cnpj"}
-          value={data.cnpj}
-          onChange={handleChange}
+          value={fornecedorData.cnpj}
+          onChange={(e) => handleChange(e, "fornecedor")}
         />
         <InputField
           label={"Telefone"}
           name={"phone"}
-          value={data.phone}
-          onChange={handleChange}
+          value={fornecedorData.phone}
+          onChange={(e) => handleChange(e, "fornecedor")}
           placeholder={"(xx)xxxx-xxxx"}
         />
         <InputField
           label={"Celular"}
           name={"mobile"}
-          value={data.mobile}
-          onChange={handleChange}
+          value={fornecedorData.mobile}
+          onChange={(e) => handleChange(e, "fornecedor")}
           placeholder={"(xx)xxxxx-xxxx"}
         />
         <InputField
           label={"E-mail"}
           name={"email"}
           type={"email"}
-          value={data.email}
-          onChange={handleChange}
+          value={fornecedorData.email}
+          onChange={(e) => handleChange(e, "fornecedor")}
           placeholder={"email@email.com"}
         />
         <InputField
           label={"Site"}
           name={"website"}
-          value={data.website}
-          onChange={handleChange}
+          value={fornecedorData.website}
+          onChange={(e) => handleChange(e, "fornecedor")}
         />
         <InputField
           label={"CEP"}
           name={"zipCode"}
-          value={data.zipCode}
-          onChange={handleChange}
+          value={fornecedorData.zipCode}
+          onChange={(e) => handleChange(e, "fornecedor")}
           placeholder={"xx.xxx-xx"}
         />
         <InputField
           label={"Endereço"}
-          name={"adress"}
-          value={data.adress}
-          onChange={handleChange}
+          name={"address"}
+          value={fornecedorData.address}
+          onChange={(e) => handleChange(e, "fornecedor")}
         />
         <InputField
           label={"Número"}
-          name={"adressNumber"}
-          value={data.adressNumber}
-          onChange={handleChange}
+          name={"addressNumber"}
+          value={fornecedorData.addressNumber}
+          onChange={(e) => handleChange(e, "fornecedor")}
         />
         <InputField
           label={"Bairro"}
           name={"neighborhood"}
-          value={data.neighborhood}
-          onChange={handleChange}
+          value={fornecedorData.neighborhood}
+          onChange={(e) => handleChange(e, "fornecedor")}
         />
         <InputField
           label={"Cidade"}
           name={"city"}
-          value={data.city}
-          onChange={handleChange}
+          value={fornecedorData.city}
+          onChange={(e) => handleChange(e, "fornecedor")}
         />
         <InputField
           label={"Banco"}
           name={"bank"}
-          value={data.bank}
-          onChange={handleChange}
+          value={fornecedorData.bank}
+          onChange={(e) => handleChange(e, "fornecedor")}
         />
         <SelectField label="Tipo de Conta" value="">
           <option value="">Selecione</option>
@@ -150,20 +106,20 @@ const CadastroFornecedor = () => {
         <InputField
           label={"Conta"}
           name={"account"}
-          value={data.account}
-          onChange={handleChange}
+          value={fornecedorData.account}
+          onChange={(e) => handleChange(e, "fornecedor")}
         />
         <InputField
           label={"Agência"}
           name={"bankingAgency"}
-          value={data.bankingAgency}
-          onChange={handleChange}
+          value={fornecedorData.bankingAgency}
+          onChange={(e) => handleChange(e, "fornecedor")}
         />
         <InputField
           label={"Chave PIX"}
           name={"pix"}
-          value={data.pix}
-          onChange={handleChange}
+          value={fornecedorData.pix}
+          onChange={(e) => handleChange(e, "fornecedor")}
         />
       </FormContainer>
       <ButtonContainer>

@@ -6,12 +6,15 @@ export const Container = styled.div`
   flex-direction: column;
 `;
 
-export const Label = styled.label``;
+export const Label = styled.label`
+  color: ${(props) => (props.error ? `${colors.warn}` : `${colors.dark}`)};
+`;
 
 export const Input = styled.input`
   width: 100%;
   padding: 0.5rem;
-  border: 1px solid ${colors.green};
+  border: 1px solid
+    ${(props) => (props.error ? `${colors.warn}` : `${colors.green}`)};
   border-radius: 0.2rem;
 
   @media (min-width: 1024px) {

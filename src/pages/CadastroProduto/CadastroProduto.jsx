@@ -1,38 +1,17 @@
-import { useState } from "react";
-import Button from "../../components/Button/Button";
-import Card from "../../components/Card/Card";
-import { InputField, SelectField } from "../../components/Form/Form";
+import { useContext } from "react";
 import { ButtonContainer, FormContainer } from "./Styles";
-import { ToastContainer, toast } from "react-toastify";
+import { ToastContainer } from "react-toastify";
+import { FormContext } from "../../contexts/FormContext";
+
+import Card from "../../components/Card/Card";
+import Button from "../../components/Button/Button";
+import { InputField, SelectField } from "../../components/Form/Form";
 
 import "react-toastify/dist/ReactToastify.min.css";
 
 const CadastroProduto = () => {
-  const [data, setData] = useState({
-    name: "",
-    brand: "",
-    picture: "",
-  });
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setData((prevData) => ({
-      ...prevData,
-      [name]: value,
-    }));
-  };
-
-  const handleSubmit = () => {
-    toast.success("Salvo com sucesso!");
-  };
-
-  const handleCancel = () => {
-    setData({
-      name: "",
-      brand: "",
-      picture: "",
-    });
-  };
+  const { produtoData, handleChange, handleSubmit, handleCancel } =
+    useContext(FormContext);
 
   return (
     <Card title={"Cadastro de Produto"} icon={"bi bi-box-seam"}>
@@ -41,14 +20,14 @@ const CadastroProduto = () => {
         <InputField
           label={"Nome"}
           name={"name"}
-          value={data.name}
-          onChange={handleChange}
+          value={produtoData.name}
+          onChange={(e) => handleChange(e, "produto")}
         />
         <InputField
           label={"Marca"}
           name={"brand"}
-          value={data.brand}
-          onChange={handleChange}
+          value={produtoData.brand}
+          onChange={(e) => handleChange(e, "produto")}
         />
         <SelectField label="Categoria" value="">
           <option value="" disabled selected>
@@ -68,8 +47,8 @@ const CadastroProduto = () => {
           label={"Foto"}
           type={"file"}
           name={"picture"}
-          value={data.picture}
-          onChange={handleChange}
+          value={produtoData.picture}
+          onChange={(e) => handleChange(e, "produto")}
         />
       </FormContainer>
       <ButtonContainer>
