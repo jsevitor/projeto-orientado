@@ -29,15 +29,25 @@ const CadastroProduto = () => {
           value={produtoData.brand}
           onChange={(e) => handleChange(e, "produto")}
         />
-        <SelectField label="Categoria" value="">
-          <option value="" disabled selected>
+        <SelectField
+          label="Categoria"
+          name={"category"}
+          value={produtoData.category}
+          onChange={(e) => handleChange(e, "produto")}
+        >
+          <option value="" disabled>
             Selecione
           </option>
           <option value="opcao1">Opção 1</option>
           <option value="opcao2">Opção 2</option>
         </SelectField>
-        <SelectField label="Fornecedor" value="">
-          <option value="" disabled selected>
+        <SelectField
+          label="Fornecedor"
+          name={"supplier"}
+          value={produtoData.supplier}
+          onChange={(e) => handleChange(e, "produto")}
+        >
+          <option value="" disabled>
             Selecione
           </option>
           <option value="opcao1">Opção 1</option>

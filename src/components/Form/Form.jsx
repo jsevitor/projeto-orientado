@@ -15,11 +15,13 @@ const InputField = ({ label, name, type, placeholder, value, onChange }) => {
   );
 };
 
-const SelectField = ({ label, value, children }) => {
+const SelectField = ({ label, name, value, onChange, children }) => {
   return (
     <Container>
       <Label>{label}</Label>
-      <Select value={value}>{children}</Select>
+      <Select name={name} value={value} onChange={onChange}>
+        {children}
+      </Select>
     </Container>
   );
 };

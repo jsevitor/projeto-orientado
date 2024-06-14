@@ -19,6 +19,7 @@ export const FormProvider = ({ children }) => {
     city: "",
     state: "",
     bank: "",
+    accountType: "",
     account: "",
     bankingAgency: "",
     pix: "",
@@ -27,6 +28,8 @@ export const FormProvider = ({ children }) => {
   const initialProdutoData = {
     name: "",
     brand: "",
+    category: "",
+    supplier: "",
     picture: "",
   };
 
@@ -48,9 +51,28 @@ export const FormProvider = ({ children }) => {
     picture: "",
   };
 
+  const initialEntradaData = {
+    product: "",
+    amount: "",
+    supplier: "",
+    entryDate: "",
+    lotNumber: "",
+    purchasePrice: "",
+  };
+
+  const initialRetiradaData = {
+    product: "",
+    amount: "",
+    withdrawalType: "",
+    withdrawalDate: "",
+    lotNumber: "",
+  };
+
   const [fornecedorData, setFornecedorData] = useState(initialFornecedorData);
   const [produtoData, setProdutoData] = useState(initialProdutoData);
   const [usuarioData, setUsuarioData] = useState(initialUsuarioData);
+  const [entradaData, setEntradaData] = useState(initialEntradaData);
+  const [retiradaData, setRetiradaData] = useState(initialRetiradaData);
   // const [errors, setErrors] = useState({});
 
   const handleChange = (e, formType) => {
@@ -74,6 +96,18 @@ export const FormProvider = ({ children }) => {
           [name]: value,
         }));
         break;
+      case "entrada":
+        setEntradaData((prevData) => ({
+          ...prevData,
+          [name]: value,
+        }));
+        break;
+      case "retirada":
+        setRetiradaData((prevData) => ({
+          ...prevData,
+          [name]: value,
+        }));
+        break;
       default:
         break;
     }
@@ -87,6 +121,8 @@ export const FormProvider = ({ children }) => {
     setFornecedorData(initialFornecedorData);
     setProdutoData(initialProdutoData);
     setUsuarioData(initialUsuarioData);
+    setEntradaData(initialEntradaData);
+    setRetiradaData(initialRetiradaData);
   };
 
   return (
@@ -95,6 +131,8 @@ export const FormProvider = ({ children }) => {
         fornecedorData,
         produtoData,
         usuarioData,
+        entradaData,
+        retiradaData,
         handleChange,
         handleSubmit,
         handleCancel,

@@ -100,7 +100,12 @@ const CadastroFornecedor = () => {
           value={fornecedorData.bank}
           onChange={(e) => handleChange(e, "fornecedor")}
         />
-        <SelectField label="Tipo de Conta" value="">
+        <SelectField
+          label="Tipo de Conta"
+          name={"accountType"}
+          value={fornecedorData.accountType}
+          onChange={(e) => handleChange(e, "fornecedor")}
+        >
           <option value="">Selecione</option>
           <option value="opcao1">Conta Poupança PF</option>
           <option value="opcao2">Conta Poupança PJ</option>
