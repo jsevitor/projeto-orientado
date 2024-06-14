@@ -17,7 +17,6 @@ const CadastroFornecedor = () => {
     <Card title={"Cadastro de Fornecedor"} icon={"bi bi-truck"}>
       <ToastContainer />
       <FormContainer>
-        {fornecedorData.name}
         <InputField
           label={"Nome"}
           name={"name"}
@@ -87,6 +86,12 @@ const CadastroFornecedor = () => {
           label={"Cidade"}
           name={"city"}
           value={fornecedorData.city}
+          onChange={(e) => handleChange(e, "fornecedor")}
+        />
+        <InputField
+          label={"UF"}
+          name={"state"}
+          value={fornecedorData.state}
           onChange={(e) => handleChange(e, "fornecedor")}
         />
         <InputField

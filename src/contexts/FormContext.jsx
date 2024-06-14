@@ -1,5 +1,4 @@
 // FormContext.js
-
 import { createContext, useState } from "react";
 import { toast } from "react-toastify";
 
@@ -18,6 +17,7 @@ export const FormProvider = ({ children }) => {
     addressNumber: "",
     neighborhood: "",
     city: "",
+    state: "",
     bank: "",
     account: "",
     bankingAgency: "",
@@ -30,8 +30,27 @@ export const FormProvider = ({ children }) => {
     picture: "",
   };
 
+  const initialUsuarioData = {
+    name: "",
+    cpf: "",
+    phone: "",
+    mobile: "",
+    email: "",
+    birthDate: "",
+    zipCode: "",
+    address: "",
+    addressNumber: "",
+    neighborhood: "",
+    city: "",
+    state: "",
+    user: "",
+    password: "",
+    picture: "",
+  };
+
   const [fornecedorData, setFornecedorData] = useState(initialFornecedorData);
   const [produtoData, setProdutoData] = useState(initialProdutoData);
+  const [usuarioData, setUsuarioData] = useState(initialUsuarioData);
   // const [errors, setErrors] = useState({});
 
   const handleChange = (e, formType) => {
@@ -49,6 +68,12 @@ export const FormProvider = ({ children }) => {
           [name]: value,
         }));
         break;
+      case "usuario":
+        setUsuarioData((prevData) => ({
+          ...prevData,
+          [name]: value,
+        }));
+        break;
       default:
         break;
     }
@@ -61,6 +86,7 @@ export const FormProvider = ({ children }) => {
   const handleCancel = () => {
     setFornecedorData(initialFornecedorData);
     setProdutoData(initialProdutoData);
+    setUsuarioData(initialUsuarioData);
   };
 
   return (
@@ -68,6 +94,7 @@ export const FormProvider = ({ children }) => {
       value={{
         fornecedorData,
         produtoData,
+        usuarioData,
         handleChange,
         handleSubmit,
         handleCancel,
